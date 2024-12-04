@@ -18,7 +18,7 @@
                         foreach ($customers as $customer) {
                     ?>
                     <tr>
-                         <td><?php echo $customer['customer_id']?></td>
+                         <td><?php echo "<a href='orders.php?c_id=" . $customer['customer_id'] . "'></a>"?></td>
                          <td><?php echo $customer['first_name']?></td>
                          <td><?php echo $customer['last_name']?></td>
                          <td><?php echo $customer['email']?></td>
