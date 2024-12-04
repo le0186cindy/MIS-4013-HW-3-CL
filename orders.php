@@ -1,8 +1,17 @@
 <?php
     require "header.php";
     require_once "util-db.php";
-    $customer_name = $_POST['c_first_name'] . " " . $_POST['c_last_name'];
+    
+    $customerID;
+    if (isset($_POST['c_id'])) {
+        $customerID = $_POST['c_id'];
+    } else if (isset($_GET['c_id'])) {
+        $customerID = $_GET['c_id'];
+    }
+
     $orders = get_orders_by_customer($_POST['c_id']);
+    $customer = get_customer_by_id($customerID);
+    $customer_name = $customer['first_name'] . " " . $customer['last_name'];
 ?>
 
 <html>
