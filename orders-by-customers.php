@@ -7,6 +7,7 @@
 <html>
 
 <body>
+    <h4 class="ms-5">This page shows all the orders. Each card is a customer.</h4>
     <div class="card-deck m-5">
         <?php
             foreach ($customers as $customer) {
