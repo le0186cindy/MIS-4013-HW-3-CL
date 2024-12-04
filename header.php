@@ -22,6 +22,9 @@
               <a class="nav-link text-white" href="/products.php">View Products</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link text-white" href="/order-items.php">Order Items</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link text-white" href="/orders-by-customers.php">Orders by Customers</a>
             </li>
           </ul>
