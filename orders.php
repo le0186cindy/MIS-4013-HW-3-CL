@@ -9,7 +9,7 @@
         $customerID = $_GET['c_id'];
     }
 
-    $orders = get_orders_by_customer($_POST['c_id']);
+    $orders = get_orders_by_customer($customerID);
     $customer = get_customer_by_id($customerID);
     $customer_name = $customer['first_name'] . " " . $customer['last_name'];
 ?>
