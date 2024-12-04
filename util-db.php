@@ -30,7 +30,7 @@
         try {
             $conn = get_db_connection();
             $result = mysqli_query($conn, "SELECT product_id, `name`, price FROM products");
-            return $result->fetch_all();
+            return $result->fetch_assoc();
         } catch (Exception $e) {
             $conn->close();
             throw $e;
