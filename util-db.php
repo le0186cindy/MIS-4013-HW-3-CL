@@ -35,6 +35,17 @@
             throw $e;
         }
     }
+    function get_customer_by_id($customer_id) {
+        $conn = get_db_connection();
+
+        try {
+            $conn = get_db_connection();
+            return mysqli_query($conn, "SELECT c.first_name,c.last_name FROM customer c WHERE c.customer_id = $customer_id");
+        } catch (Exception $e) {
+            $conn->close();
+            throw $e;
+        }
+    }
 
     function get_items_by_order($order_id) {
         $conn = get_db_connection();
