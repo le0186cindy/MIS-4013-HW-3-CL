@@ -51,9 +51,12 @@
     function get_items_by_order($order_id) {
         $conn = get_db_connection();
         try {
-            $conn = get_db_connection();
-            return mysqli_query($conn, "SELECT oi.product_id, p.name, oi.quantity, p.price FROM order_items oi
-            JOIN products p ON oi.product_id = p.product_id WHERE oi.order_id = $order_id ORDER BY p.name");
+            $stmt = $conn->prepare("SELECT oi.product_id, p.name, oi.quantity, p.price FROM order_items oi
+            JOIN products p ON oi.product_id = p.product_id WHERE oi.order_id = ? ORDER BY p.name");
+            $stmt->bind_param("i", $order_id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
         } catch (Exception $e) {
             $conn->close();
             throw $e;
