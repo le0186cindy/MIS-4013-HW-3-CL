@@ -17,7 +17,21 @@
 
         try {
             $conn = get_db_connection();
-            return mysqli_query($conn, "SELECT product_id, `name`, price FROM products");
+            $result = mysqli_query($conn, "SELECT product_id, `name`, price FROM products");
+            return $result;
+        } catch (Exception $e) {
+            $conn->close();
+            throw $e;
+        }
+    }
+
+    function get_all_order_items() {
+        $conn = get_db_connection();
+
+        try {
+            $conn = get_db_connection();
+            $result = mysqli_query($conn, "SELECT order_id, product_id, quantity FROM order_items");
+            return $result;
         } catch (Exception $e) {
             $conn->close();
             throw $e;
