@@ -17,7 +17,6 @@
 <html>
 
 <body>
-    <h4 class="ms-5">This table shows all the orders.</h4>
     <div class="m-5">
         <h1>Order for <?php echo $customer_name?></h1>
         <?php
