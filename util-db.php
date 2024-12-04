@@ -29,8 +29,7 @@
 
         try {
             $conn = get_db_connection();
-            $result = mysqli_query($conn, "SELECT product_id, `name`, price FROM products");
-            return $result;
+            return mysqli_query($conn, "SELECT o.order_id FROM orders o WHERE o.customer_id = $customer_id ORDER BY o.order_id");
         } catch (Exception $e) {
             $conn->close();
             throw $e;
