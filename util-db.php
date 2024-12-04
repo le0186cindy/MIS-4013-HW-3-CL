@@ -40,7 +40,7 @@
 
         try {
             $conn = get_db_connection();
-            return mysqli_query($conn, "SELECT c.first_name,c.last_name FROM customer c WHERE c.customer_id = $customer_id");
+            return mysqli_query($conn, "SELECT c.first_name,c.last_name FROM customers c WHERE c.customer_id = $customer_id");
         } catch (Exception $e) {
             $conn->close();
             throw $e;
