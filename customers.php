@@ -22,7 +22,7 @@
                          <td><?php echo $customer['first_name']?></td>
                          <td><?php echo $customer['last_name']?></td>
                          <td><?php echo $customer['email']?></td>
-                         <td><form method="post" action="orders.php">
+                         <td><form method="get" action="orders.php">
                             <input type="hidden" name="c_id" value="<?php echo $customer['customer_id']?>">
                             <input type="hidden" name="c_first_name" value="<?php echo $customer['first_name']?>">
                             <input type="hidden" name="c_last_name" value="<?php echo $customer['last_name']?>">
